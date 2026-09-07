@@ -1,5 +1,5 @@
 public class Cliente {
-
+    // Atributos comunes a todos los clientes
     private int id;
     private String nombre;
     private String apellidoRazonSocial;
@@ -9,8 +9,9 @@ public class Cliente {
     private String email;
     private String fechaAlta;
 
-
-    public Cliente(int id, String nombre, String apellidoRazonSocial, String documentoCuit, String direccion, String telefono, String email, String fechaAlta) {
+    // Constructor
+    public Cliente(int id, String nombre, String apellidoRazonSocial, String documentoCuit,
+                   String direccion, String telefono, String email, String fechaAlta) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoRazonSocial = apellidoRazonSocial;
@@ -21,6 +22,7 @@ public class Cliente {
         this.fechaAlta = fechaAlta;
     }
 
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -83,5 +85,19 @@ public class Cliente {
 
     public void setFechaAlta(String fechaAlta) {
         this.fechaAlta = fechaAlta;
+    }
+
+    // Método para mostrar la información del cliente
+    // Las clases hijas van a "sobrescribir" (override) este método
+    // para agregar sus propios atributos
+    public String mostrarInformacion() {
+        return "ID: " + id +
+                "\nNombre: " + nombre +
+                "\nApellido/Razón Social: " + apellidoRazonSocial +
+                "\nDocumento/CUIT: " + documentoCuit +
+                "\nDirección: " + direccion +
+                "\nTeléfono: " + telefono +
+                "\nEmail: " + email +
+                "\nFecha de Alta: " + fechaAlta;
     }
 }
